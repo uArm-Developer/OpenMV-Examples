@@ -9,18 +9,26 @@ from pyb import LED
 #initial the uarm
 led = LED(2) # Green led
 led.toggle()
-led.on()
+#initial the uart
+uart = UART(3, 115200)
+#get the command first, since the arm should change the communication port from main uart to second port
+flag = uart.readline()
+while(flag != b'ok\n'):
+    flag = uart.readline()
+    utime.sleep_ms(100)
+    print(flag)
+
+
+#print("done")
+
 
 #set the uarm to the default position
-utime.sleep_ms(3000)
-uart = UART(3, 115200)
-uart.write("G0 X250 Y0 Z")
-uart.write("160 F10000\r\n")
 utime.sleep_ms(500)
-uart.write("G0 X250 Y0 Z")
-uart.write("160 F10000\r\n")
 
-utime.sleep_ms(5000)
+uart.write("G0 X250 Y0 Z")
+uart.write("160 F15000\r\n")
+
+utime.sleep_ms(8000)
 
 #finish the initialization
 led.off()
