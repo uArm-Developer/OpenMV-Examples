@@ -7,7 +7,7 @@ from pyb import UART
 from pyb import LED
 
 #initial the uarm
-led = LED(2) # Green led
+led = LED(3) # Blue led
 led.toggle()
 #initial the uart
 uart = UART(3, 115200)
