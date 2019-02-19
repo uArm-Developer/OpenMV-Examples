@@ -29,6 +29,7 @@
 ### 3.Install uArm Swift Pro firmware
 * Connect uArm Swift Pro and PC using microUSB wire.
 * Upload uArmSwiftPro_2ndUART.hex using [XLoader](http://xloader.russemotto.com/XLoader.zip)
+
 ![](https://github.com/uArm-Developer/OpenMV-Examples/blob/master/uArm_face_track_demo/image/xloader.jpg)
 
 ## How to install hardware
